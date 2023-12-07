@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+
+img{
+    height: 450px;
+    /* rotate: 6%; */
+}
+.contenedor {
+    position: relative;
+    display: inline-block;
+  }
+  
+.text {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #69519d;
+    font-size: 40px;
+    font-family: 'Kalam', cursive;
+    transform: rotate(8deg);
+    text-orientation: sideways-right;
+}
+
