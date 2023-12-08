@@ -5,6 +5,9 @@ img{
     max-height: 450px;
     /* rotate: 6%; */
 }
+main{
+    max-width: 75vw;
+}
 .contenedor {
     position: relative;
     margin-top: 20px;
@@ -37,7 +40,6 @@ h2{
     position: relative;
     margin: 0 auto;
     padding: 1em;
-    /* max-width: 23em; */
     background: hsla(0,0%,100%,.25) border-box;
     overflow: hidden;
     border-radius: .3em;
@@ -59,10 +61,27 @@ h2{
 
 @media (max-width: 500px) {
     img{
-        max-height:350px;
+        max-height:85vw;
+        height: auto;
     }
     .text{
+        font-size: 30px;
+        top: 11%;
+    }
+    main{
+        max-width: 95vw;
+    }
+    h2{
+        text-align: center;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+      }
+
+}
+@media (max-width: 350px){
+    .text{
+        left: 30%;
         font-size: 25px;
     }
-    
 }
