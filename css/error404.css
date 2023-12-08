@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad&display=swap');
 
 img{
-    height: 450px;
+    max-height: 450px;
     /* rotate: 6%; */
 }
 .contenedor {
     position: relative;
-    display: inline-block;
-  }
-  
+    margin-top: 20px;
+}
+
+.contenedor:hover {
+    transform: rotate(10deg);
+}
 .text {
     position: absolute;
-    top: 7%;
+    top: 9%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #69519d;
@@ -20,4 +24,45 @@ img{
     transform: rotate(8deg);
     text-orientation: sideways-right;
 }
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(79,61,115,1) 41%, rgba(160,122,246,1) 100%);
+}
 
+h2{
+    font-family: 'Afacad', sans-serif;
+}
+
+.description{
+    position: relative;
+    margin: 0 auto;
+    padding: 1em;
+    /* max-width: 23em; */
+    background: hsla(0,0%,100%,.25) border-box;
+    overflow: hidden;
+    border-radius: .3em;
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
+                0 .5em 1em rgba(0, 0, 0, 0.6);
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
+}
+                     /* / * Use un filtro para desenfocar los bordes * / */
+.description::before{
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: -30px;
+    z-index: -1;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+}
+
+
+@media (max-width: 500px) {
+    img{
+        max-height:350px;
+    }
+    .text{
+        font-size: 25px;
+    }
+    
+}
