@@ -1,5 +1,6 @@
 body{
     margin-top: 120px;
+    background-image: url(../img/fondoLogin.png);
 }
 .colorFormulario {
     background-color: #362A4C;
