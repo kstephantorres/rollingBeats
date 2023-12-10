@@ -36,7 +36,7 @@ main{
     border-radius: 5px;
 }
 .carousel {
-    position: fixed;
-    padding-top: 4rem;
+    position: sticky;
+    top: 8rem;
    
 }
