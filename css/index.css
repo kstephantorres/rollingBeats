@@ -19,3 +19,15 @@ main{
     padding: 1px;
     background-color: rgba(0, 0, 0, 0.64);
 }
+
+.img-alum{
+    height: 5rem;
+}
+.btn-option{
+    background-color: white;
+    border: none;
+}
+.btn-play{
+    background-color: white;
+    border: none;
+}
