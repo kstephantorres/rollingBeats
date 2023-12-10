@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(79,61,115,1) 41%, rgba(160,122,246,1) 100%);
+}
+main{
+  flex-grow: 1;
+}
+
+.linea{
+    padding: 1px;
+    background-color: rgba(0, 0, 0, 0.64);
+}
