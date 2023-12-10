@@ -49,9 +49,7 @@ main{
     font-size: 2.5rem;
     color: white;
 }
-.duracion{
-    width: 20rem;
-}
+
 
 /* mediaqueris */
 @media (max-width: 990px) {
@@ -60,6 +58,9 @@ main{
     }
     .album-grilla{
         display: none;
+    }
+    .duracion{
+        width: 20rem;
     }
 }
 
@@ -104,6 +105,20 @@ main{
    }
    .grilla-play{
     font-size: small;
+   }
+   .volumen-reproduccion{
+    display: none;
+   }
+   .duracion-reproduccion{
+    display: none;
+   }
+   .texto-reproduccion{
+    font-size: small;
+    padding: 0%;
+    margin: 0%;
+   }
+   .icono-reproductor{
+    font-size: 1.5rem;
    }
   
 }
