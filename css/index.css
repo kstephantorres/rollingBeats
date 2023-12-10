@@ -40,3 +40,15 @@ main{
     top: 8rem;
    
 }
+#prev, #play, #next, #auto{
+    background-color: transparent;
+    border: none;
+    
+}
+.icono-reproductor{
+    font-size: 2.5rem;
+    color: white;
+}
+.duracion{
+    width: 20rem;
+}

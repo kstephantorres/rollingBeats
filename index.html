@@ -242,23 +242,25 @@
             </article>
         </section>
         <section class="row bg-dark">
-            <div class=" col-3 p-0">
-                <img class="img-alum d-flex justify-content-start" src="img/img-album/parachutes-coldplay.jpg" alt="ALbum parachutes">
+            <div class=" col-3 p-0 d-flex align-items-center justify-content-between">
+                <img class="img-alum" src="img/img-album/parachutes-coldplay.jpg" alt="ALbum parachutes">
+                <div class="">
                 <i class="bi bi-volume-up-fill" aria-hidden="true" id="volumen-icono" onclick="mute_sound()"></i>
                 <input type="range" min="0" max="100" value="90" onchange="volume_change()">
+                </div>
             </div>
-            <div class="col-3 p-0">
-                <p id="titulo">Yellow</p>
+            <div class="col-3 p-0 d-flex flex-column align-items-center">
+                <p class="mt-2" id="titulo">Yellow</p>
                 <p id="artista">Coldplay</p>
             </div>
-            <div class="col-3 p-0">
-                <button onclick="previous_song()" id="prev"><i class="bi bi-arrow-left-circle-fill" aria-hidden="true"></i></button>
-                <button onclick="play_song()" id="play"><i class="bi bi-play-circle-fill" aria-hidden="true"></i></button>
-                <button onclick="next_song()" id="next"><i class="bi bi-arrow-right-circle-fill" aria-hidden="true"></i></button>
+            <div class="col-3 p-0 d-flex justify-content-center align-items-center">
+                <button onclick="previous_song()" id="prev"><i class="bi bi-arrow-left-circle-fill  icono-reproductor" aria-hidden="true"></i></button>
+                <button class="px-2" onclick="play_song()" id="play"><i class="bi bi-play-circle-fill icono-reproductor" aria-hidden="true"></i></button>
+                <button onclick="next_song()" id="next"><i class="bi bi-arrow-right-circle-fill icono-reproductor" aria-hidden="true"></i></button>
             </div>
-            <div class="col-2 p-0">
-                <input type="range" min="0" max="100" value="0" id="duration_song" onchange="change_duration()">
-                <button id="auto" onclick="autoplay_switch()">Auto Play <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i></button>
+            <div class="col-3 p-0 d-flex justify-content-end align-items-center">
+                <input class="mx-2 duracion" type="range" min="0" max="100" value="0" id="duration_song" onchange="change_duration()">
+                <button class="text-white" id="auto" onclick="autoplay_switch()"><i class="bi bi-arrow-counterclockwise icono-reproductor" aria-hidden="true"></i></button>
             </div>
         </section>
     </main>
