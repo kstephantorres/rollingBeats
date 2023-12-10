@@ -52,3 +52,14 @@ main{
 .duracion{
     width: 20rem;
 }
+
+/* mediaqueris */
+@media (max-width: 990px) {
+    .container-grillas{
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 820px){
+    
+}
