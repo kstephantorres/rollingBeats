@@ -58,8 +58,52 @@ main{
     .container-grillas{
         flex-direction: column-reverse;
     }
+    .album-grilla{
+        display: none;
+    }
 }
 
 @media (max-width: 820px){
-    
+     .card-text{
+        display: none;
+     }
+}
+@media (max-width: 600px){
+    .card-text, .card-title{
+       display: none;
+    }
+    .card-footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    .buscador{
+        width: 7rem;
+    }
+   .formulario-buscador{
+    justify-content: center;
+   }
+   .foto-grilla{
+    height: 3rem;
+   }
+   .contenedor-all{
+    padding: 0;
+    margin: 0;
+   }
+   .album-grilla, .artista-grilla{
+    display: none;
+   }
+   .fila-grilla{
+    padding: 0;
+    margin: 0;
+   }
+   .tema{
+    font-size: 10px;
+   }
+   .grilla-play{
+    font-size: small;
+   }
+  
 }

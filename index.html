@@ -21,197 +21,239 @@
     <title>RollingBeats</title>
 </head>
 <body>
-    <main class="container text-white">
+    <main class="container text-white contenedor-all">
+        <section class="container">
+            <h2>Álbumes más escuchados</h2>
+            <div class="row">
+                <div class="col-4 col-md-4 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/img-album/Speack Now-taylor swift.jpg" class="card-img-top" alt="álbum Speack now">
+                        <div class="card-body">
+                            <h5 class="card-title">Speack Now</h5>
+                            <p class="card-text">El núevo álbum de Taylor Swift que la está rompiendo en las redes.</p>
+                            <div class="card-footer">
+                              <button class="btn-play" type="button"><i class="bi bi-play-circle h1"></i></button>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4 col-md-4 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/img-album/Evolve-Imagen Dragons.jpg" class="card-img-top" alt="álbum Evolve">
+                        <div class="card-body">
+                            <h5 class="card-title">Evolve</h5>
+                            <p class="card-text">Un álbum repletos de sorpresas con temas inovadores.</p>
+                            <div class="card-footer">
+                              <button class="btn-play" type="button"><i class="bi bi-play-circle h1"></i></button>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4 col-md-4 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/img-album/parachutes-coldplay.jpg" class="card-img-top" alt="álbum Parachutes">
+                        <div class="card-body">
+                            <h5 class="card-title">Parachutes</h5>
+                            <p class="card-text">Letras maravillosas con melodías suaves y envolventes.</p>
+                            <div class="card-footer">
+                              <button class="btn-play" type="button"><i class="bi bi-play-circle h1"></i></button>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            
+        </section>
         <section class="container titulo-index">
             <h1 class="py-2"><i class="bi bi-music-note-beamed"></i> lista de repdrocucción</h1>
             <div class="linea"></div>
         </section>
         <section class="row m-4 d-flex container-grillas">
-            <article class="col-lg-7">
-                <form class="d-flex px-5 my-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscador" aria-label="Search">
+            <article class="col-lg-7 fila-grillas">
+                <form class="d-flex px-5 my-3 formulario-buscador" role="search">
+                    <input class="form-control me-2 buscador" type="search" placeholder="Buscador" aria-label="Search">
                     <button class="btn btn-light" type="submit">Buscar</button>
                   </form>
                 <div class="grilla">
-                    <ul class="list-group text-white">
-                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row">
-                            <div class="col-2">
-                                <img class="img-alum" src="img/img-album/reputation-tv-taylor swift.jpg" alt="Album Reputation">
+                    <ul class="list-group text-white container contenedor-all">
+                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row fila-grilla">
+                            <div class=" col-4 col-sm-3 col-lg-2 img-grilla">
+                                <img class="img-alum foto-grilla" src="img/img-album/reputation-tv-taylor swift.jpg" alt="Album Reputation">
                             </div>
-                            <div class="col-2">
-                                <h6>... Ready for it?</h6>
+                            <div class=" col-4 col-sm-3 col-lg-2">
+                                <h6 class="tema">... Ready for it?</h6>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-2 col-sm-3 col-lg-2 artista-grilla">
                                 <p>Taylor Swift</p>
                             </div>
-                            <div class="col-2">
+                            <div class="  col-2 col-lg-2 album-grilla">
                                 <p>Reputation Tv</p>
                             </div>
-                            <div class="col-2 justify-content-around">
-                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3"></i></button>
-                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3"></i></button>
+                            <div class=" col-4 col-sm-3  col-lg-2 justify-content-around">
+                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3 grilla-play"></i></button>
+                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3 grilla-play"></i></button>
                             </div>
                        </li>
-                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row">
-                            <div class="col-2">
-                                <img class="img-alum" src="img/img-album/1989-Taylor Swift.jpg" alt="Album Reputation">
+                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row fila-grilla">
+                            <div class="col-4 col-sm-3 col-lg-2 img-grilla">
+                                <img class="img-alum foto-grilla" src="img/img-album/1989-Taylor Swift.jpg" alt="Album Reputation">
                             </div>
-                            <div class="col-2">
-                                <h6>Blank Space</h6>
+                            <div class="col-4  col-sm-3 col-lg-2">
+                                <h6 class="tema">Blank Space</h6>
                             </div>
-                            <div class="col-2">
+                            <div class="col-sm-3 col-lg-2 artista-grilla">
                                 <p>Taylor Swift</p>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-lg-2 album-grilla">
                                 <p>1989 Taylor's Version</p>
                             </div>
-                            <div class="col-2 justify-content-around">
-                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3"></i></button>
-                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3"></i></button>
+                            <div class="col-4 col-2 col-sm-3 col-lg-2 justify-content-around">
+                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3 grilla-play"></i></button>
+                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3 grilla-play"></i></button>
                             </div>
                        </li>
-                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row">
-                            <div class="col-2">
-                                <img class="img-alum" src="img/img-album/reputation-tv-taylor swift.jpg" alt="Album Reputation">
+                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row fila-grilla">
+                            <div class="col-4 col-sm-3 col-lg-2 img-grilla ">
+                                <img class="img-alum foto-grilla" src="img/img-album/reputation-tv-taylor swift.jpg" alt="Album Reputation">
                             </div>
-                            <div class="col-2">
-                                <h6>Shake it off</h6>
+                            <div class="col-4 col-sm-3 col-lg-2 ">
+                                <h6 class="tema">Shake it off</h6>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-sm-3 col-lg-2  artista-grilla">
                                 <p>Taylor Swift</p>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-lg-2 album-grilla">
                                 <p>1989 Taylor's Version</p>
                             </div>
-                            <div class="col-2 justify-content-around">
-                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3"></i></button>
-                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3"></i></button>
+                            <div class="col-4 col-sm-3 col-lg-2 justify-content-around">
+                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3 grilla-play"></i></button>
+                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3 grilla-play"></i></button>
                             </div>
                        </li>
-                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row">
-                            <div class="col-2">
-                                <img class="img-alum" src="img/img-album/Mylo Xyloto-coldplay.jpg" alt="Album Reputation">
+                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row fila-grilla">
+                            <div class="col-4 col-sm-3 col-lg-2 img-grilla">
+                                <img class="img-alum foto-grilla" src="img/img-album/Mylo Xyloto-coldplay.jpg" alt="Album Reputation">
                             </div>
-                            <div class="col-2">
-                                <h6>Paradise</h6>
+                            <div class="col-4 col-sm-3 col-lg-2">
+                                <h6 class="tema">Paradise</h6>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-sm-3 col-lg-2 artista-grilla">
                                 <p>Coldplay</p>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-lg-2 album-grilla">
                                 <p>Mylo Xyloto</p>
                             </div>
-                            <div class="col-2 justify-content-around">
-                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3"></i></button>
-                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3"></i></button>
+                            <div class="col-4 col-sm-3 col-lg-2 justify-content-around">
+                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3 grilla-play"></i></button>
+                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3 grilla-play"></i></button>
                             </div>
                        </li>
-                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row">
-                            <div class="col-2">
-                                <img class="img-alum" src="img/img-album/parachutes-coldplay.jpg" alt="Album Reputation">
+                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row fila-grilla">
+                            <div class="col-4 col-sm-3 col-lg-2 img-grilla">
+                                <img class="img-alum foto-grilla" src="img/img-album/parachutes-coldplay.jpg" alt="Album Reputation">
                             </div>
-                            <div class="col-2">
-                                <h6>Yellow</h6>
+                            <div class="col-4 col-sm-3 col-lg-2">
+                                <h6 class="tema">Yellow</h6>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-sm-3 col-lg-2 artista-grilla">
                                 <p>Coldplay</p>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-lg-2 album-grilla">
                                 <p>Parachute</p>
                             </div>
-                            <div class="col-2 justify-content-around">
-                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3"></i></button>
-                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3"></i></button>
+                            <div class="col-4 col-sm-3 col-lg-2 justify-content-around">
+                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3 grilla-play"></i></button>
+                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3 grilla-play"></i></button>
                             </div>
                        </li>
-                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row">
-                            <div class="col-2">
-                                <img class="img-alum" src="img/img-album/La ley y la Trampa- Chaqueño palavecino.jpg" alt="Album Reputation">
+                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row fila-grilla">
+                            <div class="col-4 col-sm-3 col-lg-2 img-grilla">
+                                <img class="img-alum foto-grilla" src="img/img-album/La ley y la Trampa- Chaqueño palavecino.jpg" alt="Album Reputation">
                             </div>
-                            <div class="col-2">
-                                <h6>Tramposo</h6>
+                            <div class="col-4 col-sm-3 col-lg-2">
+                                <h6 class="tema">Tramposo</h6>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-sm-3 col-lg-2 artista-grilla">
                                 <p>Chaqueño Palavecino</p>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-lg-2 album-grilla">
                                 <p>La Ley La Trampa</p>
                             </div>
-                            <div class="col-2 justify-content-around">
-                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3"></i></button>
-                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3"></i></button>
+                            <div class="col-4 col-sm-3 col-lg-2 justify-content-around">
+                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3 grilla-play"></i></button>
+                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3 grilla-play"></i></button>
                             </div>
                        </li>
-                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row">
-                            <div class="col-2">
-                                <img class="img-alum" src="img/img-album/Evolve-Imagen Dragons.jpg" alt="Album Reputation">
+                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row fila-grilla">
+                            <div class="col-4 col-sm-3 col-lg-2 img-grilla">
+                                <img class="img-alum foto-grilla" src="img/img-album/Evolve-Imagen Dragons.jpg" alt="Album Reputation">
                             </div>
-                            <div class="col-2">
-                                <h6>Believer</h6>
+                            <div class="col-4 col-sm-3 col-lg-2">
+                                <h6 class="tema">Believer</h6>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-sm-3 col-lg-2 artista-grilla">
                                 <p>Imagine Dragons</p>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-lg-2 album-grilla">
                                 <p>Evolve</p>
                             </div>
-                            <div class="col-2 justify-content-around">
-                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3"></i></button>
-                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3"></i></button>
+                            <div class="col-4 col-sm-3 col-lg-2 justify-content-around">
+                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3 grilla-play"></i></button>
+                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3 grilla-play"></i></button>
                             </div>
                        </li>
-                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row">
-                            <div class="col-2">
-                                <img class="img-alum" src="img/img-album/presion-callejeros.jpg" alt="Album Reputation">
+                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row fila-grilla">
+                            <div class="col-4 col-sm-3 col-lg-2 img-grilla">
+                                <img class="img-alum foto-grilla" src="img/img-album/presion-callejeros.jpg" alt="Album Reputation">
                             </div>
-                            <div class="col-2">
-                                <h6>Una nueva noche fria</h6>
+                            <div class="col-4 col-sm-3 col-lg-2">
+                                <h6 class="tema">Una nueva noche fria</h6>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-sm-3 col-lg-2 artista-grilla">
                                 <p>Callejeros</p>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-lg-2 album-grilla">
                                 <p>Presión</p>
                             </div>
-                            <div class="col-2 justify-content-around">
-                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3"></i></button>
-                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3"></i></button>
+                            <div class="col-4 col-sm-3 col-lg-2 justify-content-around">
+                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3 grilla-play"></i></button>
+                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3 grilla-play"></i></button>
                             </div>
                        </li>
-                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row">
-                            <div class="col-2">
-                                <img class="img-alum" src="img/img-album/Speack Now-taylor swift.jpg" alt="Album Reputation">
+                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row fila-grilla">
+                            <div class="col-4 col-sm-3 col-lg-2 img-grilla">
+                                <img class="img-alum foto-grilla" src="img/img-album/Speack Now-taylor swift.jpg" alt="Album Reputation">
                             </div>
-                            <div class="col-2">
-                                <h6>Back to December</h6>
+                            <div class="col-4 col-sm-3 col-lg-2">
+                                <h6 class="tema">Back to December</h6>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-sm-3 col-lg-2 artista-grilla">
                                 <p>Taylor Swift</p>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-lg-2 album-grilla">
                                 <p>Speack now Taylor's Version</p>
                             </div>
-                            <div class="col-2 justify-content-around">
-                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3"></i></button>
-                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3"></i></button>
+                            <div class="col-4 col-sm-3 col-lg-2 justify-content-around">
+                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3 grilla-play"></i></button>
+                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3 grilla-play"></i></button>
                             </div>
                        </li>
-                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row">
-                            <div class="col-2">
-                                <img class="img-alum" src="img/img-album/señales-callejeros.jpg" alt="Album Reputation">
+                        <li class="list-group-item d-flex align-items-center justify-content-around m-2 row fila-grilla">
+                            <div class="col-4 col-sm-3 col-lg-2 img-grilla">
+                                <img class="img-alum foto-grilla" src="img/img-album/señales-callejeros.jpg" alt="Album Reputation">
                             </div>
-                            <div class="col-2">
-                                <h6>Señales</h6>
+                            <div class="col-4 col-sm-3 col-lg-2">
+                                <h6 class="tema">Señales</h6>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-sm-3 col-lg-2 artista-grilla">
                                 <p>Callejeros</p>
                             </div>
-                            <div class="col-2">
+                            <div class=" col-lg-2 album-grilla">
                                 <p>Creo</p>
                             </div>
-                            <div class="col-2 justify-content-around">
-                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3"></i></button>
-                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3"></i></button>
+                            <div class="col-4 col-sm-3 col-lg-2 justify-content-around">
+                                <button class="btn-play" type="button"><i class="bi bi-play-circle h3 grilla-play"></i></button>
+                                <button type="button" class="btn-option"><i class="bi bi-three-dots-vertical h3 grilla-play"></i></button>
                             </div>
                        </li>
                     </ul>
@@ -242,23 +284,23 @@
             </article>
         </section>
         <section class="row bg-dark repdroductor">
-            <div class=" col-3 p-0 d-flex align-items-center justify-content-between">
+            <div class=" col-3 col-sm-4 p-0 d-flex align-items-center justify-content-between">
                 <img class="img-alum" src="img/img-album/parachutes-coldplay.jpg" alt="ALbum parachutes">
                 <div class="">
                 <i class="bi bi-volume-up-fill" aria-hidden="true" id="volumen-icono" onclick="mute_sound()"></i>
                 <input type="range" min="0" max="100" value="90" onchange="volume_change()">
                 </div>
             </div>
-            <div class="col-3 p-0 d-flex flex-column align-items-center">
+            <div class="col-3 col-sm-4 p-0 d-flex flex-column align-items-center">
                 <p class="mt-2" id="titulo">Yellow</p>
                 <p id="artista">Coldplay</p>
             </div>
-            <div class="col-3 p-0 d-flex justify-content-center align-items-center">
+            <div class="col-3 col-sm-4 p-0 d-flex justify-content-center align-items-center">
                 <button onclick="previous_song()" id="prev"><i class="bi bi-arrow-left-circle-fill  icono-reproductor" aria-hidden="true"></i></button>
                 <button class="px-2" onclick="play_song()" id="play"><i class="bi bi-play-circle-fill icono-reproductor" aria-hidden="true"></i></button>
                 <button onclick="next_song()" id="next"><i class="bi bi-arrow-right-circle-fill icono-reproductor" aria-hidden="true"></i></button>
             </div>
-            <div class="col-3 p-0 d-flex justify-content-end align-items-center">
+            <div class="col-3  col-sm-12 p-0 d-flex justify-content-center align-items-center">
                 <input class="mx-2 duracion" type="range" min="0" max="100" value="0" id="duration_song" onchange="change_duration()">
                 <button class="text-white" id="auto" onclick="autoplay_switch()"><i class="bi bi-arrow-counterclockwise icono-reproductor" aria-hidden="true"></i></button>
             </div>
