@@ -6,8 +6,9 @@ class Cancion {
     #imagen
     #duracion
     #album
+    #cancion
 
-    constructor(titulo, artista, categoria, imagen, duracion, album) {
+    constructor(titulo, artista, categoria, imagen, duracion, album, cancion) {
         this.#id = crypto.randomUUID();
         this.#titulo = titulo;
         this.#artista = artista;
@@ -15,6 +16,7 @@ class Cancion {
         this.#imagen = imagen;
         this.#duracion = duracion;
         this.#album = album;
+        this.#cancion = cancion
     }
 
     get id() {
@@ -72,6 +74,14 @@ class Cancion {
     set album(value) {
         this.#album = value;
     }
+
+    get cancion() {
+        return this.#cancion;
+    }
+
+    set cancion(value) {
+        this.#cancion = value;
+    }
     toJSON(){
         return {
             id: this.id,
@@ -80,7 +90,8 @@ class Cancion {
             categoria: this.categoria,
             imagen: this.imagen,
             duracion: this.duracion,
-            album: this.album
+            album: this.album,
+            cancion: this.cancion
         }
     }
 }
