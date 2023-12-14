@@ -6,8 +6,11 @@
     font-size: 1.5rem;
     color: rgb(255, 255, 255);
   }
+  .navbar-toggler{
+    background-color: white;
+  }
   
-  #elementosNavbar a:hover{
+  #elementosNav a:hover{
     color: #bf56ca;
   }
   
@@ -17,7 +20,7 @@
     height: 5rem;
   }
   
-  #elementosNavbar {
+  .elementosNavbar {
     display: flex; 
   }
   
@@ -36,19 +39,22 @@
   
   #navbarColor{
     background: rgba(0, 0, 0, 0.64);
+    display: flex;
+    justify-content: center;
   }
-  
+  #contenedorNavBoton{
+    font-size: 3rem;
+  }
+  .botonesUsuario{
+    width: 10rem;
+    height: 2.8rem;
+    font-size: 20px;
+  }
   @media (min-width: 1200px) and (max-width: 1400px){
     #listaNavbar a {
         padding: 0;
         font-size: 1.1rem;
-    }
-  
-    .container img{
-        width: 6.5rem;
-        height: 6.2rem;
-    }
-  
+    }  
     #inputBuscar {
         width: 12rem;
         height: 2.2rem;
@@ -57,16 +63,28 @@
     .botonesUsuario {
         width: 10rem;
         height: 2.8rem;
+        font-size: 17px;
+    }
+    #contenedorNavBoton{
+      font-size: small;
     }
   }
   
   @media (min-width: 992px) and (max-width: 1199px){
-    #elementosNavbar a {
+    #listaNavbar a {
+      padding: 0;
+      font-size: 1.1rem;
+  }  
+    .botonesUsuario{
+      height: 2.8rem;
+      font-size: 17px;
+    }
+    .elementosNavbar a {
         padding: 0;
         font-size: 1rem;
     }
   
-    #navbarSupportedContent{
+    #navbarRollingBeats{
         justify-content: center;
     }
   
@@ -75,7 +93,7 @@
         height: 2.5rem;
     }
   
-    .container img{
+    #imgLogo{
         width: 6.5rem;
         height: 6.5rem;
     }
@@ -94,7 +112,15 @@
   }
   
   @media (min-width: 768px) and (max-width: 991px){
-    #elementosNavbar{
+    .botonesUsuario{
+      font-size: 17px;
+      margin: 3px 0;
+      width: auto;
+    }
+    #contenedorNavBoton{
+      flex-direction: column;
+    }
+    .elementosNavbar{
         display: flex;
         flex-direction: column;
     }
@@ -112,12 +138,20 @@
         font-size: 1rem;
     }
   
-    #navbarSupportedContent{
+    #navbarRollingBeats{
         justify-content: space-between;
     }
+
   }
   
   @media (min-width: 0px) and (max-width: 767px){
+    #navbarColor{
+      display: block;
+      padding: 10px 15px;
+    }
+    .botonesUsuario{
+      font-size: 17px;
+    }
   
     li, form {
         margin: 0.5rem;
@@ -125,5 +159,9 @@
   
     #elementosNav{
         flex-direction: column;
+        max-width: 95vw;
+    }
+    #contenedorNavBoton{
+      flex-direction: column;
     }
   }
