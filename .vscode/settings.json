@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#d75d5d",
         "activityBar.background": "#d75d5d",
@@ -19,4 +20,7 @@
         "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.color": "#CD3434"
+=======
+    "liveServer.settings.port": 5501
+>>>>>>> 744eb7b (Se limpio el codigo de comentarios y algunos console.log)
 }

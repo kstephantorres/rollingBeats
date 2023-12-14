@@ -97,8 +97,6 @@ canciones.push(cancionBlankSpace)
 
 // ----------------------------------- F U N C I O N E S
 
-console.log("🚀 ~ file: App.js:96 ~ listaCanciones:", listaCanciones)
-
 const cargaInicial = ()=>{
     if(canciones.length > 0)
     {
@@ -108,8 +106,7 @@ const cargaInicial = ()=>{
     }
 }
 
-const crearLi=(cancion, fila)=>{
-    // const tablaContacto = document.getElementById('tablaContacto')
+const crearLi=(cancion)=>{
     listaCanciones.innerHTML += `
         <li class="list-group-item d-flex align-items-center justify-content-around m-2 row fila-grilla">
             <div class=" col-4 col-sm-3 col-lg-2 img-grilla">
