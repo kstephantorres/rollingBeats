@@ -1,0 +1,14 @@
+.btn-editar,.btn-agregar, .btn-borrar{
+    background-color: white;
+    border: none;
+    font-size: 20px;
+}
+.iconos{
+    padding: 0%;
+}
+.btn-agregar{
+    color: rgb(48, 132, 188);
+}
+.btn-borrar{
+    color: red;
+}
