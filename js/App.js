@@ -1,95 +1,11 @@
-// Calss cancion provicional aqui luego hay que importar
-class Cancion {
-    #id
-    #titulo
-    #artista
-    #categoria
-    #imagen
-    #duracion
-    #album
-
-    constructor(titulo, artista, categoria, imagen, duracion, album) {
-        this.#id = crypto.randomUUID();
-        this.#titulo = titulo;
-        this.#artista = artista;
-        this.#categoria = categoria;
-        this.#imagen = imagen;
-        this.#duracion = duracion;
-        this.#album = album;
-    }
-
-    get id() {
-        return this.#id;
-    }
-
-    get titulo() {
-        return this.#titulo;
-    }
-
-    set titulo(value) {
-        this.#titulo = value;
-    }
-
-    get artista() {
-        return this.#artista;
-    }
-
-    set artista(value) {
-        this.#artista = value;
-    }
-
-    // Getter y Setter para categoria
-    get categoria() {
-        return this.#categoria;
-    }
-
-    set categoria(value) {
-        this.#categoria = value;
-    }
-
-    // Getter y Setter para imagen
-    get imagen() {
-        return this.#imagen;
-    }
-
-    set imagen(value) {
-        this.#imagen = value;
-    }
-
-    // Getter y Setter para duracion
-    get duracion() {
-        return this.#duracion;
-    }
-
-    set duracion(value) {
-        this.#duracion = value;
-    }
-
-    // Getter y Setter para album
-    get album() {
-        return this.#album;
-    }
-
-    set album(value) {
-        this.#album = value;
-    }
-    toJSON(){
-        return {
-            id: this.id,
-            titulo: this.titulo,
-            artista: this.artista,
-            categoria: this.categoria,
-            imagen: this.imagen,
-            duracion: this.duracion,
-            album: this.album
-        }
-    }
-}
+import { Cancion } from "./classCancion.js"
 
 const canciones= JSON.parse(localStorage.getItem('cancionesKey')) || []
 const listaCanciones= document.querySelector('#listaCanciones')
 
-const cancionReadyFor = new Cancion('... Ready for this ?','Taylor Swift','Electropop','https://th.bing.com/th?id=OSK.b902b1bd4ca8466ffc819dcb45a5c1a8&w=148&h=148&c=7&o=6&pid=SANGAM','3:28','Reputation')
+
+// Canciones agregadas manualmete porque aun no tenemos un CRUD de la clase administrador
+const cancionReadyFor = new Cancion('... Ready for it?','Taylor Swift','Electropop','https://th.bing.com/th?id=OSK.b902b1bd4ca8466ffc819dcb45a5c1a8&w=148&h=148&c=7&o=6&pid=SANGAM','3:28','Reputation')
 const cancionBlankSpace = new Cancion('Blank Space','Taylor Swift','Electropop','https://www.bing.com/th?id=OIP.gdVUK53oTHaBsK3dXbipfwHaHa&w=174&h=185&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2','3:51',"1989 Taylor's Version")
 
 canciones.push(cancionReadyFor)

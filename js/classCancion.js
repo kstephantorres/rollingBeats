@@ -1,4 +1,4 @@
-class Cancion {
+export class Cancion {
     #id
     #titulo
     #artista
