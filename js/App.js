@@ -1,6 +1,6 @@
 import { Cancion } from "./classCancion.js"
 
-const canciones= JSON.parse(localStorage.getItem('cancionesKey')) || []
+export const canciones= JSON.parse(localStorage.getItem('cancionesKey')) || []
 const listaCanciones= document.querySelector('#listaCanciones')
 
 
@@ -44,6 +44,14 @@ const crearLi=(cancion)=>{
         </li>
         `
 }
+
+export const actualizarLista = (resultados) => {
+    const listaCanciones = document.querySelector('#listaCanciones');
+    listaCanciones.innerHTML = '';
+    resultados.forEach((cancion) => {
+        crearLi(cancion);
+    });
+};
 
 cargaInicial()
 
