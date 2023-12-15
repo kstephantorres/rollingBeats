@@ -16,8 +16,8 @@ canciones.push(cancionBlankSpace)
 const cargaInicial = ()=>{
     if(canciones.length > 0)
     {
-        canciones.forEach((cancion,position) => {
-            crearLi(cancion,++position)
+        canciones.forEach((cancion) => {
+            crearLi(cancion)
         });
     }
 }
