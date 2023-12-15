@@ -12,3 +12,17 @@
 .btn-borrar{
     color: red;
 }
+.btn-editar a{
+    color: black;
+}
+.texto-boton{
+    padding: 0%;
+    margin: 0%;
+}
+
+
+@media (max-width: 600px){
+    .texto-boton{
+        display: none;
+    }
+}
