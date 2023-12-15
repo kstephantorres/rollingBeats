@@ -1,8 +1,3 @@
-.btn-editar,.btn-agregar, .btn-borrar{
-    background-color: white;
-    border: none;
-    font-size: 20px;
-}
 
 .iconos{
     padding: 0%;
@@ -10,12 +5,6 @@
 .btn-agregar{
     color: rgb(48, 132, 188);
     font-size: 2rem;
-}
-.btn-borrar{
-    color: red;
-}
-.btn-editar a{
-    color: black;
 }
 .texto-boton{
     padding: 0%;
@@ -30,4 +19,9 @@
     .texto-boton{
         display: none;
     }
+    .boton-grilla{
+        padding: 0%;
+        margin: 0%;
+    }
+    
 }
