@@ -3,11 +3,13 @@
     border: none;
     font-size: 20px;
 }
+
 .iconos{
     padding: 0%;
 }
 .btn-agregar{
     color: rgb(48, 132, 188);
+    font-size: 2rem;
 }
 .btn-borrar{
     color: red;
@@ -18,6 +20,9 @@
 .texto-boton{
     padding: 0%;
     margin: 0%;
+}
+.btn-editar:hover,.btn-agregar:hover, .btn-borrar:hover{
+    text-decoration: underline;
 }
 
 
