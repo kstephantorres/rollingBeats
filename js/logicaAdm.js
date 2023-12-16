@@ -14,8 +14,9 @@ const administrador = new Admin(
 // funciones
 
 //entrar a la pagina maquetadoAdmin cuando se aprete el boton de confirmar
-document.querySelector('#btn-confirmar').addEventListener('click', entrarMaqAdmin);
+
 function entrarMaqAdmin() {
+    confirmado = false;
     const usuario = document.querySelector('#username').value;
     const contrasena = document.querySelector('#password').value;
     // validaciones
@@ -23,6 +24,7 @@ function entrarMaqAdmin() {
         if (usuario === administrador.usuario && contrasena === administrador.contrasenia) {
             window.location.href = "administracion.html";
             alert('Usted inicio sessión');
+            confirmado=true;
             } else{
                 mostrarError();
                 limpiarFormulario();
@@ -35,3 +37,10 @@ function mostrarError(){
 function limpiarFormulario(){
     document.getElementById("login-form").reset();
 }
+
+//crear funcion para cambiar la clase none de nav-adm por block cuando confirmar=true en js.
+
+
+
+document.querySelector('#btn-confirmar').addEventListener('click', entrarMaqAdmin);
+

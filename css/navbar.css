@@ -50,6 +50,12 @@
     height: 2.8rem;
     font-size: 20px;
   }
+
+  .nav-adm{
+    display: none;
+  }
+
+
   @media (min-width: 1200px) and (max-width: 1400px){
     #listaNavbar a {
         padding: 0;
