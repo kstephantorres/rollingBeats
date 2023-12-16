@@ -10,8 +10,12 @@ const administrador = new Admin(
     localStorage.setItem('adminKey',JSON.stringify(administrador));
     console.log(localStorage.getItem('adminKey'));
 
+    
+//datos globales
+let validar = false;
 
 // funciones
+//funcion para validar datos
 
 const loginForm = document.querySelector('#login-form')
 loginForm.addEventListener('submit', (e)=>{
@@ -20,10 +24,19 @@ loginForm.addEventListener('submit', (e)=>{
     const password=document.querySelector("#password").value;
     const adm = JSON.parse(localStorage.getItem('adminKey'))
     if(adm.usuario === userName && adm.contrasenia === password){
-        alert('entro');
+        alert(`Bienvenido ${adm.usuario}`);
+        validar = true;
+        localStorage.setItem('log-acces', JSON.stringify(validar))
         window.location.href = 'administracion.html'
+        
     }
     else{
-        alert('no entro')
+        alert('Usuario o contraseña invalidos');
+        limpiarFormulario();
     }
 });
+//funcion borrar datos del formulario
+function limpiarFormulario(){
+    const formulario = document.querySelector('#login-form');
+    formulario.reset();
+}
