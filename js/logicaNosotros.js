@@ -9,3 +9,50 @@ const kevin = new Miembro('Kevin Torres', '../img/nosotros/img-Kevin.jpg', 'Hola
 
 const miembros = [fernando, javier, lourdes, leonel, andres, kevin];
 const contenedorModal = document.getElementById('contenedorModal')
+
+function mostrarModal(miembro) {
+    contenedorModal.innerHTML = `<div
+    class="modal fade"
+    id="modal${miembro.nombre}"
+    tabindex="-1"
+    aria-labelledby="modal"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5 text-white" id="modal${miembro.nombre}">${miembro.nombre}</h2>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <img src="${miembro.imagen}" class="img-fluid my-2" alt="imagen de ${miembro.nombre}" />
+          <p class="text-white">${miembro.descripcion}</p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-outline-dark"
+            data-bs-dismiss="modal"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`
+
+
+    const modal = new bootstrap.Modal(document.getElementById(`modal${miembro.nombre}`));
+    modal.show();
+}
+
+miembros.forEach((miembro, index) => {
+    const btnModalMiembro = document.querySelectorAll('.btnModal')[index];
+    btnModalMiembro.addEventListener('click', () => mostrarModal(miembro));
+});
