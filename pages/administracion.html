@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="../css/navbar.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/administracion.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <title>RollingBeats</title>
   </head>
   <body>
@@ -504,7 +505,7 @@
                 <div
                   class="col-12 d-flex align-items-center justify-content-center"
                 >
-                  <button type="button" class="btn btn-success">
+                  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalContacto">
                     <span class="texto-boton">Agregar Canción</span
                     ><i class="bi bi-plus-circle-fill agregar px-2"></i>
                   </button>
@@ -515,6 +516,115 @@
         </article>
       </section>
     </main>
+    <div
+      class="modal"
+      id="modalContacto"
+      tabindex="-1"
+      aria-labelledby="modalContactoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Agregar Canción</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formAgregarCancion">
+                              <div class="mb-3">
+                <label for="titulo" class="form-label">Titulo</label>
+                <input
+                  type="text"
+                  id="titulo"
+                  class="form-control inputAgregar"
+                  placeholder=""
+                  minlength="1"
+                  maxlength="50"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="artista" class="form-label">Artista</label>
+                <input
+                  type="text"
+                  id="artista"
+                  class="form-control inputAgregar"
+                  placeholder=""
+                  minlength="3"
+                  maxlength="50"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="categoria" class="form-label">Categoria</label>
+                <input
+                  type="text"
+                  id="categoria"
+                  class="form-control inputAgregar"
+                  placeholder=""
+                  min="3"
+                  max="20"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="imagen" class="form-label">Imagen</label>
+                <input
+                  type="url"
+                  id="imagen"
+                  class="form-control inputAgregar"
+                  placeholder="link"
+                  required
+                  minlength="7" maxlength="200"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="duracion" class="form-label">Duracion</label>
+                <input
+                  type="text"
+                  id="duracion"
+                  class="form-control inputAgregar"
+                  placeholder=""
+                  minlength="3"
+                  maxlength="5"
+                  pattern="^([0-5][0-9]):([0-5][0-9])$"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="album" class="form-label">Album</label>
+                <input
+                  type="text"
+                  id="album"
+                  class="form-control inputAgregar"
+                  placeholder=""
+                  minlength="1"
+                  maxlength="50"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="cancion" class="form-label">Cancion</label>
+                <input
+                  type="url"
+                  id="cancion"
+                  class="form-control inputAgregar"
+                  placeholder="link"
+                  required
+                  minlength="7" maxlength="200"
+                />
+              </div>
+              <button class="btn btn-success" type="submit" id="btnAgregar">Agregar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="mt-5">
       <div class="container text-center py-3">
         <div class="row">
@@ -613,7 +723,10 @@
           <p class="text-light">&copy; RollingBeats - Todos los derechos reservados</p>
         </div>
       </footer>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
       <script src="/js/paginas.js"></script>
+      <script src="../js/administrador.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
 </body>
 </html>

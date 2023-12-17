@@ -4,7 +4,7 @@ const canciones= JSON.parse(localStorage.getItem('cancionesKey')) || []
 const listaCanciones= document.querySelector('#listaCanciones')
 const formAgregarCancion = document.querySelector('#formAgregarCancion')
 
-const btnAgregar = document.querySelector('#btnAgregar')
+// const btnAgregar = document.querySelector('#btnAgregar')
 
 // ----------------------------------- F U N C I O N E S
 const guardarLocalStorage =()=>{
@@ -63,7 +63,7 @@ window.borrarContacto=(idCancion)=>{
       }).then((result) => {
         if (result.isConfirmed) {
             // aqui ponemos logica para borrar 
-            const posicionCancion = (canciones.findIndex((cancion)=>cancion.id === idCancion))+1   
+            const posicionCancion = (canciones.findIndex((cancion)=>cancion.id === idCancion))   
             canciones.splice(posicionCancion,1)
             guardarLocalStorage()
             borrarFila(posicionCancion)
@@ -78,19 +78,19 @@ window.borrarContacto=(idCancion)=>{
 }
 
 const borrarFila=(posicionCancion)=>{
-    listaCanciones.removeChild(listaCanciones.children[posicionCancion])    
+    listaCanciones.removeChild(listaCanciones.children[posicionCancion+1])    
 }
 
-window.detalleCancion=(idCancion)=>{
-    const url = window.location
-    //Luego del signo de pregunta (?) en el url son parametros
-    url.href = `${url.origin}/pages/detalleMaquetado.html?id=${idCancion}`
-}
+// window.detalleCancion=(idCancion)=>{
+//     const url = window.location
+//     //Luego del signo de pregunta (?) en el url son parametros
+//     url.href = `${url.origin}/pages/detalleMaquetado.html?id=${idCancion}`
+// }
 
-window.editarContacto=(idCancion)=>{
-    const url = window.location
-    url.href = `${url.origin}/pages/modificarCancion.html?id=${idCancion}`
-}
+// window.editarContacto=(idCancion)=>{
+//     const url = window.location
+//     url.href = `${url.origin}/pages/modificarCancion.html?id=${idCancion}`
+// }
 
 cargaInicial()
 
