@@ -18,7 +18,7 @@ function mostrarModal(miembro) {
     aria-labelledby="modal"
     aria-hidden="true"
   >
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title fs-5 text-white" id="modal${miembro.nombre}">${miembro.nombre}</h2>
