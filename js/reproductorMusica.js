@@ -9,3 +9,16 @@ const sliderVolumen = document.getElementById('sliderVolumen');
 const contenedorOutput = document.getElementById('outputVolumen');
 const mutear = document.getElementById('mutear');
 let raf = null;
+
+function calcularTiempo(secs) {
+    const minutos = Math.floor(secs / 60);
+    const segundos = Math.floor(secs % 60);
+    const segundosDevueltos = segundos < 10 ? `0${segundos}` : `${segundos}`;
+    return `${minutos}:${segundosDevueltos}`;
+}
+function mostrarDuracion() {
+    contenedorDuracion.textContent = calcularTiempo(audio.duration);
+}
+function setSliderMax() {
+    sliderProgresoCancion.max = Math.floor(audio.duration);
+}
