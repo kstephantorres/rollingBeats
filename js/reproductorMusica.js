@@ -61,3 +61,25 @@ function mutearVolumen() {
     actualizarIconoMute();
     contenedorOutput.textContent = sliderVolumen.value;
 }
+reproducir.addEventListener('click', () => { audio.play(); mientrasSeReproduce(); })
+pausar.addEventListener('click', () => audio.pause())
+reiniciar.addEventListener('click', () => audio.load())
+sliderProgresoCancion.addEventListener('input', () => {
+    contenedorTiempoActual.textContent = calcularTiempo(sliderProgresoCancion.value);
+    if (!audio.paused) {
+        cancelAnimationFrame(raf);
+    }
+});
+sliderProgresoCancion.addEventListener('change', () => {
+    audio.currentTime = sliderProgresoCancion.value;
+    if (!audio.paused) {
+        requestAnimationFrame(mientrasSeReproduce);
+    }
+});
+sliderVolumen.addEventListener('input', (e) => {
+    const value = e.target.value;
+    contenedorOutput.textContent = value;
+    audio.volume = value / 100;
+});
+mutear.addEventListener('click', mutearVolumen)
+actualizarIconoMute();
