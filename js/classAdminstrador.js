@@ -1,4 +1,4 @@
-class Admin {
+export class Admin {
     
     #id
     #usuario

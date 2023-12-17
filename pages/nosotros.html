@@ -60,12 +60,24 @@
                         Nosotros</a
                       >
                   </li>
-                  <li class="nav-item  d-flex " id="contenedorNavBoton">
-                          <a class="btn btn-outline-light m-1 botonesUsuario d-flex align-items-center justify-content-center px-1" href="./login.html">
-                            Iniciar sesión
-                          </a>
-                          <a class="btn btn-outline-light m-1 botonesUsuario d-flex align-items-center justify-content-center px-1" href="./error404.html">Registrate</a>
-                  </li>
+                  <li id="nav-adm" class="nav-item p-lg-2 px-xl-2  mx-2 mx-lg-3 py-sm-3 navAdm">
+                    <a class="nav-link" href="../pages/administracion.html">
+                        <i class="bi bi-person-fill-lock"></i>
+                      Administración</a
+                    >
+                </li>
+                <li class="nav-item  d-flex " id="contenedorNavBoton">
+                  <a id="boton_inicio" class="btn btn-outline-light m-1 botonesUsuario d-flex align-items-center justify-content-center px-1" href="../pages/login.html">
+                    Iniciar sesión
+                  </a>
+                  <a id="boton_registrar" class="btn btn-outline-light m-1 botonesUsuario d-flex align-items-center justify-content-center px-1" href="../pages/error404.html">Registrate</a>
+          </li>
+          <li class="nav-item  d-flex " id="contenedorNavBotonAdm">
+                  <a id="boton_salir" class="btn btn-outline-light m-1 botonesUsuario d-flex align-items-center justify-content-center px-1" href="../pages/login.html">
+                    Salir
+                  </a>
+                  <a id="boton_registrar" class="btn btn-outline-light m-1 botonesUsuario d-flex align-items-center justify-content-center px-1" href="../pages/error404.html">Cuenta</a>
+          </li>
                 </div>
               </ul>
             </div>
@@ -327,6 +339,7 @@
         <p class="text-light">&copy; RollingBeats - Todos los derechos reservados</p>
       </div>
     </footer>
+    <script src="/js/paginas.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
