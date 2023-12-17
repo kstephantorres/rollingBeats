@@ -46,16 +46,12 @@ function actualizarIconoMute() {
 
 function mutearVolumen() {
     if (audio.muted) {
-        // Si está muteado, desmutar y establecer el volumen al valor actual del slider
         audio.muted = false;
         audio.volume = 1
         sliderVolumen.value = 100
         contenedorOutput.textContent = sliderVolumen.value
-        // mutear.innerHTML = iconoVolumen;
     } else {
-        // Si no está muteado, mutar y establecer el volumen en cero
         audio.muted = true;
-        // mutear.innerHTML = iconoMute;
         sliderVolumen.value = 0;
     }
     actualizarIconoMute();
