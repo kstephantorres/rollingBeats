@@ -18,6 +18,7 @@ Si quiere ver una demo del proyecto, por favor ingrese al siguiente link:
 - [FontAwesome v6.5.1](https://fontawesome.com/)
 - [Bootstrap Icons v.1.11.2](https://icons.getbootstrap.com/)
 - [Google Fonts](https://fonts.google.com/)
+- [Sweet Alert v11.10.1](https://sweetalert2.github.io/)
 ## Pasos para probar el proyecto 📝
 Si le interesa probar el proyecto, puede clonar el repositorio introduciendo el siguiente comando en la dirección en donde quiera que se cree la carpeta con el proyecto:
 
