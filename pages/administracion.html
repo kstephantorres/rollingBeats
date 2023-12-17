@@ -503,9 +503,9 @@
               </li> -->
               <li class="list-group-item m-2 row fila-grilla">
                 <div
-                  class="col-12 d-flex align-items-center justify-content-center"
+                  class="col-12 d-flex align-items-center justify-content-center" 
                 >
-                  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalContacto">
+                  <button type="button" class="btn btn-success" id="btnAC" data-bs-toggle="modal" data-bs-target="#modalCancion">
                     <span class="texto-boton">Agregar Canción</span
                     ><i class="bi bi-plus-circle-fill agregar px-2"></i>
                   </button>
@@ -518,9 +518,9 @@
     </main>
     <div
       class="modal"
-      id="modalContacto"
+      id="modalCancion"
       tabindex="-1"
-      aria-labelledby="modalContactoLabel"
+      aria-labelledby="modalCancionLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog">
@@ -532,7 +532,7 @@
               class="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
-            ></button>
+              ></button>
           </div>
           <div class="modal-body">
             <form id="formAgregarCancion">

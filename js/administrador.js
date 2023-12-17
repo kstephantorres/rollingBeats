@@ -3,8 +3,9 @@ import { Cancion } from "./classCancion.js"
 const canciones= JSON.parse(localStorage.getItem('cancionesKey')) || []
 const listaCanciones= document.querySelector('#listaCanciones')
 const formAgregarCancion = document.querySelector('#formAgregarCancion')
-
-// const btnAgregar = document.querySelector('#btnAgregar')
+const btnCloseModal = document.querySelector('.btn-close')
+const btnAgregar = document.querySelector('#btnAgregar')
+let posicionActual=-1
 
 // ----------------------------------- F U N C I O N E S
 const guardarLocalStorage =()=>{
@@ -40,13 +41,30 @@ const crearLi=(cancion)=>{
                 <p>${cancion.album}</p>
             </div>
             <div class=" col-4 col-sm-3  col-lg-2 iconos">
-                <a href="../pages/detalleMaquetado.html" class="btn btn-primary boton-grilla mb-1" role="button"  onclick="editarContacto('${cancion.id}')"> <span class="texto-boton">Editar</span> <i class="bi bi-pencil-fill px-1"></i></a>
+                <button class="btn btn-primary boton-grilla mb-1" type="button"  onclick="editarContacto('${cancion.id}')" data-bs-toggle="modal" data-bs-target="#modalCancion"> <span class="texto-boton">Editar</span> <i class="bi bi-pencil-fill px-1"></i></button>
                 <button type="button" class="btn btn-danger boton-grilla mb-1" onclick="borrarContacto('${cancion.id}')"><span class="texto-boton">Borrar</span><i class="bi bi-x-circle-fill borrar px-1"></i></button>
             </div>
         </li>
         `
 }
 
+window.editarContacto=(idCancion)=>{
+    document.querySelector('.modal-title').innerHTML= 'Modificar Canción'
+    btnAgregar.innerText = 'Modificar'
+
+    const inputs = document.querySelectorAll('.inputAgregar')
+    const posicionCancion = (canciones.findIndex((cancion)=>cancion.id === idCancion))   
+
+    inputs[0].value= canciones[posicionCancion].titulo
+    inputs[1].value= canciones[posicionCancion].artista
+    inputs[2].value= canciones[posicionCancion].categoria
+    inputs[3].value= canciones[posicionCancion].imagen
+    inputs[4].value= canciones[posicionCancion].duracion
+    inputs[5].value= canciones[posicionCancion].album
+    inputs[6].value= canciones[posicionCancion].cancion
+    posicionActual = posicionCancion
+    
+}
 
 
 window.borrarContacto=(idCancion)=>{  
@@ -77,6 +95,13 @@ window.borrarContacto=(idCancion)=>{
       });
 }
 
+btnCloseModal.addEventListener('click',()=>{
+    document.querySelector('.modal-title').innerHTML= 'Agregar Canción'
+    btnAgregar.innerText = 'Agregar'
+})
+
+
+
 const borrarFila=(posicionCancion)=>{
     listaCanciones.removeChild(listaCanciones.children[posicionCancion+1])    
 }
@@ -94,10 +119,20 @@ const borrarFila=(posicionCancion)=>{
 
 cargaInicial()
 
+const actualizarLi=(posicionCancion,imagen,titulo,artista,album)=>{
+
+        listaCanciones.children[posicionCancion+1].children[0].children[0].src= imagen
+        listaCanciones.children[posicionCancion+1].children[1].children[0].innerText= titulo
+        listaCanciones.children[posicionCancion+1].children[2].children[0].innerText= artista
+        listaCanciones.children[posicionCancion+1].children[3].children[0].innerText= album
+
+}
+
 formAgregarCancion.addEventListener('submit',(event)=>{
     event.preventDefault()
     const inputs = document.querySelectorAll('.inputAgregar')
-
+    if(btnAgregar.innerText === 'Agregar'){
+    document.querySelector('.modal-title').innerHTML= 'Agregar Canción'
         const titulo = inputs[0].value
         const artista = inputs[1].value
         const categoria = inputs[2].value
@@ -111,6 +146,19 @@ formAgregarCancion.addEventListener('submit',(event)=>{
         guardarLocalStorage()
         limpiarFormulario()
         crearLi(nuevaCancion)
-    
-   
+    }
+   else if(btnAgregar.innerText === 'Modificar')
+   {
+            canciones[posicionActual].titulo = inputs[0].value
+            canciones[posicionActual].artista = inputs[1].value
+            canciones[posicionActual].categoria = inputs[2].value
+            canciones[posicionActual].imagen = inputs[3].value
+            canciones[posicionActual].duracion = inputs[4].value
+            canciones[posicionActual].album = inputs[5].value
+            canciones[posicionActual].cancion = inputs[6].value
+            guardarLocalStorage()
+            actualizarLi(posicionActual,inputs[3].value,inputs[0].value,inputs[1].value,inputs[5].value)
+        btnAgregar.innerText = 'Agregar'
+   }
+    btnCloseModal.click()
 })
