@@ -32,7 +32,6 @@ function cerrarSesion() {
   }
 }
 
-// Aplicar transiciones una vez que el DOM haya cargado
 document.addEventListener('DOMContentLoaded', () => {
   mostrar();
 });
