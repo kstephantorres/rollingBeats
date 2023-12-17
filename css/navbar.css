@@ -170,4 +170,7 @@
     #contenedorNavBoton{
       flex-direction: column;
     }
+    #contenedorNavBotonAdm{
+      flex-direction: column;
+    }
   }
