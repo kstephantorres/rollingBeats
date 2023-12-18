@@ -13,3 +13,9 @@ main{
     padding-top: 30px;
     background-image: url(../img/fondoLogin.png);
 }
+
+li{
+    white-space: wrap;
+    overflow: hidden;    /* Ocultará cualquier contenido que se desborde */
+    text-overflow: ellipsis;
+}
