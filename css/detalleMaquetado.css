@@ -15,9 +15,9 @@ main{
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
-li{
+h1, li{
     white-space: wrap;
-    overflow: hidden;    /* Ocultará cualquier contenido que se desborde */
+    overflow: hidden;
     text-overflow: ellipsis;
 }
 @media (min-width: 992px) and (max-width: 1204px) {

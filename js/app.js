@@ -3,14 +3,6 @@ import { Cancion } from "./classCancion.js"
 export const canciones= JSON.parse(localStorage.getItem('cancionesKey')) || []
 const listaCanciones= document.querySelector('#listaCanciones')
 
-
-// Canciones agregadas manualmete porque aun no tenemos un CRUD de la clase administrador
-// const cancionReadyFor = new Cancion('... Ready for it?','Taylor Swift','Electropop','https://th.bing.com/th?id=OSK.b902b1bd4ca8466ffc819dcb45a5c1a8&w=148&h=148&c=7&o=6&pid=SANGAM','3:28','Reputation')
-// const cancionBlankSpace = new Cancion('Blank Space','Taylor Swift','Electropop','https://www.bing.com/th?id=OIP.gdVUK53oTHaBsK3dXbipfwHaHa&w=174&h=185&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2','3:51',"1989 Taylor's Version")
-
-// canciones.push(cancionReadyFor)
-// canciones.push(cancionBlankSpace)
-
 // ----------------------------------- F U N C I O N E S
 
 const cargaInicial = ()=>{

@@ -41,14 +41,14 @@ const crearLi=(cancion)=>{
                 <p>${cancion.album}</p>
             </div>
             <div class=" col-4 col-sm-3  col-lg-2 iconos">
-                <button class="btn btn-primary boton-grilla mb-1" type="button"  onclick="editarContacto('${cancion.id}')" data-bs-toggle="modal" data-bs-target="#modalCancion"> <span class="texto-boton">Editar</span> <i class="bi bi-pencil-fill px-1"></i></button>
-                <button type="button" class="btn btn-danger boton-grilla mb-1" onclick="borrarContacto('${cancion.id}')"><span class="texto-boton">Borrar</span><i class="bi bi-x-circle-fill borrar px-1"></i></button>
+                <button class="btn btn-primary boton-grilla mb-1" type="button"  onclick="editarCancion('${cancion.id}')" data-bs-toggle="modal" data-bs-target="#modalCancion"> <span class="texto-boton">Editar</span> <i class="bi bi-pencil-fill px-1"></i></button>
+                <button type="button" class="btn btn-danger boton-grilla mb-1" onclick="borrarCancion('${cancion.id}')"><span class="texto-boton">Borrar</span><i class="bi bi-x-circle-fill borrar px-1"></i></button>
             </div>
         </li>
         `
 }
 
-window.editarContacto=(idCancion)=>{
+window.editarCancion=(idCancion)=>{
     document.querySelector('.modal-title').innerHTML= 'Modificar Canción'
     btnAgregar.innerText = 'Modificar'
 
@@ -67,8 +67,7 @@ window.editarContacto=(idCancion)=>{
 }
 
 
-window.borrarContacto=(idCancion)=>{  
-    // Animacion para confirmar o aprobar la elimiacion de un contacto
+window.borrarCancion=(idCancion)=>{  
     Swal.fire({
         title: "¿Estas seguro?",
         text: "No podras recuperar los datos borrados.",
@@ -98,6 +97,7 @@ window.borrarContacto=(idCancion)=>{
 btnCloseModal.addEventListener('click',()=>{
     document.querySelector('.modal-title').innerHTML= 'Agregar Canción'
     btnAgregar.innerText = 'Agregar'
+    limpiarFormulario()
 })
 
 
@@ -130,8 +130,10 @@ const actualizarLi=(posicionCancion,imagen,titulo,artista,album)=>{
 
 formAgregarCancion.addEventListener('submit',(event)=>{
     event.preventDefault()
+    
     const inputs = document.querySelectorAll('.inputAgregar')
     if(btnAgregar.innerText === 'Agregar'){
+        
     document.querySelector('.modal-title').innerHTML= 'Agregar Canción'
         const titulo = inputs[0].value
         const artista = inputs[1].value
@@ -159,6 +161,8 @@ formAgregarCancion.addEventListener('submit',(event)=>{
             guardarLocalStorage()
             actualizarLi(posicionActual,inputs[3].value,inputs[0].value,inputs[1].value,inputs[5].value)
         btnAgregar.innerText = 'Agregar'
+        
    }
+   
     btnCloseModal.click()
 })
