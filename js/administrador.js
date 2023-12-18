@@ -1,4 +1,5 @@
 import { Cancion } from "./classCancion.js"
+import { validarCantidadCaracteres, validarEnlace, validarFormatoMS } from "./validaciones.js"
 
 const canciones= JSON.parse(localStorage.getItem('cancionesKey')) || []
 const listaCanciones= document.querySelector('#listaCanciones')
@@ -106,16 +107,6 @@ const borrarFila=(posicionCancion)=>{
     listaCanciones.removeChild(listaCanciones.children[posicionCancion+1])    
 }
 
-// window.detalleCancion=(idCancion)=>{
-//     const url = window.location
-//     //Luego del signo de pregunta (?) en el url son parametros
-//     url.href = `${url.origin}/pages/detalleMaquetado.html?id=${idCancion}`
-// }
-
-// window.editarContacto=(idCancion)=>{
-//     const url = window.location
-//     url.href = `${url.origin}/pages/modificarCancion.html?id=${idCancion}`
-// }
 
 cargaInicial()
 
@@ -132,9 +123,10 @@ formAgregarCancion.addEventListener('submit',(event)=>{
     event.preventDefault()
     
     const inputs = document.querySelectorAll('.inputAgregar')
+    
     if(btnAgregar.innerText === 'Agregar'){
         
-    document.querySelector('.modal-title').innerHTML= 'Agregar Canción'
+        document.querySelector('.modal-title').innerHTML= 'Agregar Canción'
         const titulo = inputs[0].value
         const artista = inputs[1].value
         const categoria = inputs[2].value
@@ -142,27 +134,56 @@ formAgregarCancion.addEventListener('submit',(event)=>{
         const duracion = inputs[4].value
         const album = inputs[5].value
         const cancion = inputs[6].value
-    const nuevaCancion = new Cancion(titulo,artista,categoria,imagen,duracion,album,cancion)
-        canciones.push(nuevaCancion)
         
-        guardarLocalStorage()
-        limpiarFormulario()
-        crearLi(nuevaCancion)
-    }
-   else if(btnAgregar.innerText === 'Modificar')
-   {
-            canciones[posicionActual].titulo = inputs[0].value
-            canciones[posicionActual].artista = inputs[1].value
-            canciones[posicionActual].categoria = inputs[2].value
-            canciones[posicionActual].imagen = inputs[3].value
-            canciones[posicionActual].duracion = inputs[4].value
-            canciones[posicionActual].album = inputs[5].value
-            canciones[posicionActual].cancion = inputs[6].value
+        if(validarCantidadCaracteres(titulo, 1, 50)
+            && validarCantidadCaracteres(artista, 1, 50)
+            && validarCantidadCaracteres(categoria, 3, 20) 
+            && validarCantidadCaracteres(imagen, 8, 300)
+            && validarEnlace(imagen)
+            && validarCantidadCaracteres(duracion, 4, 5) 
+            && validarFormatoMS(duracion)
+            && validarCantidadCaracteres(album, 1, 40)
+            && validarCantidadCaracteres(cancion, 8, 300)
+            && validarEnlace(cancion)
+            ){
+            
+            const nuevaCancion = new Cancion(titulo,artista,categoria,imagen,duracion,album,cancion)
+            canciones.push(nuevaCancion)
+            
             guardarLocalStorage()
-            actualizarLi(posicionActual,inputs[3].value,inputs[0].value,inputs[1].value,inputs[5].value)
+            limpiarFormulario()
+            crearLi(nuevaCancion)
+        }else{
+            alert('Ingreso datos invalidos')
+        }
+    }else if(btnAgregar.innerText === 'Modificar'){
+            if(validarCantidadCaracteres(inputs[0].value, 1, 50)
+                && validarCantidadCaracteres(inputs[1].value, 1, 50)
+                && validarCantidadCaracteres(inputs[2].value, 3, 20) 
+                && validarCantidadCaracteres(inputs[3].value, 8, 300)
+                && validarEnlace(inputs[3].value)
+                && validarCantidadCaracteres(inputs[4].value, 4, 5) 
+                && validarFormatoMS(inputs[4].value)
+                && validarCantidadCaracteres(inputs[5].value, 1, 40)
+                && validarCantidadCaracteres(inputs[6].value, 8, 300)
+                && validarEnlace(inputs[6].value)
+            ){
+                canciones[posicionActual].titulo = inputs[0].value
+                canciones[posicionActual].artista = inputs[1].value
+                canciones[posicionActual].categoria = inputs[2].value
+                canciones[posicionActual].imagen = inputs[3].value
+                canciones[posicionActual].duracion = inputs[4].value
+                canciones[posicionActual].album = inputs[5].value
+                canciones[posicionActual].cancion = inputs[6].value
+                guardarLocalStorage()
+                actualizarLi(posicionActual,inputs[3].value,inputs[0].value,inputs[1].value,inputs[5].value)
+            }else{
+                alert('Ingreso datos invalidos')
+            }
+            
         btnAgregar.innerText = 'Agregar'
         
-   }
-   
+    }
+       
     btnCloseModal.click()
 })
