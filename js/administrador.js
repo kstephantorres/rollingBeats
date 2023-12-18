@@ -80,12 +80,12 @@ window.borrarCancion=(idCancion)=>{
         cancelButtonText: "Cancelar"
       }).then((result) => {
         if (result.isConfirmed) {
-            // aqui ponemos logica para borrar 
+            
             const posicionCancion = (canciones.findIndex((cancion)=>cancion.id === idCancion))   
             canciones.splice(posicionCancion,1)
             guardarLocalStorage()
             borrarFila(posicionCancion)
-            // 
+            
           Swal.fire({
             title: "Borrado!",
             text: "El contacto fue borrardo.",

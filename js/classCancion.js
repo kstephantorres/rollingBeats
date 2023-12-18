@@ -39,7 +39,7 @@ export class Cancion {
         this.#artista = value;
     }
 
-    // Getter y Setter para categoria
+   
     get categoria() {
         return this.#categoria;
     }
@@ -48,7 +48,6 @@ export class Cancion {
         this.#categoria = value;
     }
 
-    // Getter y Setter para imagen
     get imagen() {
         return this.#imagen;
     }
@@ -57,7 +56,7 @@ export class Cancion {
         this.#imagen = value;
     }
 
-    // Getter y Setter para duracion
+  
     get duracion() {
         return this.#duracion;
     }
@@ -66,7 +65,6 @@ export class Cancion {
         this.#duracion = value;
     }
 
-    // Getter y Setter para album
     get album() {
         return this.#album;
     }

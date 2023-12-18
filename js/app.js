@@ -1,7 +1,7 @@
 export const canciones= JSON.parse(localStorage.getItem('cancionesKey')) || []
 const listaCanciones= document.querySelector('#listaCanciones')
 
-// ----------------------------------- F U N C I O N E S
+
 
 const cargaInicial = ()=>{
     if(canciones.length > 0)

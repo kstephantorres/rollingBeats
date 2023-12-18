@@ -12,12 +12,11 @@ export class Admin {
         this.#contrasenia = contrasenia;
     }
 
-    // Getter y Setter para id
+   
     get id() {
         return this.#id;
     }
 
-    // Getter y Setter para usuario
     get usuario() {
         return this.#usuario;
     }
@@ -26,7 +25,7 @@ export class Admin {
         this.#usuario = value;
     }
 
-    // Getter y Setter para email
+    
     get email() {
         return this.#email;
     }
@@ -35,7 +34,7 @@ export class Admin {
         this.#email = value;
     }
 
-    // Getter y Setter para contraseña
+
     get contrasenia() {
         return this.#contrasenia;
     }

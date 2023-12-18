@@ -11,12 +11,12 @@ export default class Miembro{
         this.#descripcion = descripcion;
     }
 
-    // Getter para id
+   
     get id() {
         return this.#id;
     }
 
-    // Getter y Setter para nombre
+    
     get nombre() {
         return this.#nombre;
     }
@@ -25,7 +25,6 @@ export default class Miembro{
         this.#nombre = value;
     }
 
-    // Getter y Setter para imagen
     get imagen() {
         return this.#imagen;
     }
@@ -34,7 +33,6 @@ export default class Miembro{
         this.#imagen = value;
     }
 
-    // Getter y Setter para contraseña
     get descripcion() {
         return this.#descripcion;
     }
