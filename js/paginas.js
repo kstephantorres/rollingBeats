@@ -1,31 +1,37 @@
- 
-const btnSalir = document.querySelector('#boton_salir')
+const btnSalir = document.querySelector('#boton_salir');
+const botonRegistrar = document.querySelector('#boton_registrar');
+const navAdm = document.querySelector('#nav-adm');
+const validar = JSON.parse(localStorage.getItem('log-acces'));
+
 btnSalir.addEventListener('click', cerrarSesion);
-const validar = JSON.parse(localStorage.getItem('log-acces'))
-//ocultar el registrar e iniciar seccion
-function mostrar(){
- const navAdm = document.querySelector('#nav-adm');
- const navRegistros = document.querySelector('#contenedorNavBoton');
- const navCerrarSession = document.querySelector('#contenedorNavBotonAdm');
 
- if(validar === true){
-    navAdm.className = 'd-flex';
-    navRegistros.className = 'd-none';
-    navCerrarSession.className = 'd-flex';
- }
- else{
-    navAdm.className = 'd-none';
-    navRegistros.className = 'd-flex';
-    navCerrarSession.className = 'd-none';
- }
+function mostrar() {
+  if (validar === true) {
+    navAdm.classList.add('d-flex');
+    btnSalir.style.transition = 'opacity 0.5s ease-in-out';
+    btnSalir.style.opacity = 0;
+    botonRegistrar.style.transition = 'opacity 0.5s ease-in-out';
+    botonRegistrar.style.opacity = 0;
+    
+    setTimeout(() => {
+      btnSalir.textContent = 'Salir';
+      btnSalir.style.opacity = 1;
+      botonRegistrar.textContent = 'Cuenta';
+      botonRegistrar.style.opacity = 1;
+    }, 600);
+  } else {
+    navAdm.classList.add('d-none');
+  }
 }
 
-function cerrarSesion(){
-    alert('Estas cerrando sessión');
+function cerrarSesion() {
+  if (validar === true) {
+    alert('Estás cerrando sesión');
     localStorage.removeItem('log-acces');
-    window.location.href = 'login.html'
+    window.location.href = 'login.html';
+  }
 }
 
-
-
-mostrar();
+document.addEventListener('DOMContentLoaded', () => {
+  mostrar();
+});
