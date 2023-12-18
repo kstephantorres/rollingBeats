@@ -3,7 +3,7 @@
   }  
   #listaNavbar a{
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: rgb(255, 255, 255);
   }
   .navbar-toggler{
@@ -29,26 +29,18 @@
     height: 2.5rem;
   }
   
-  #buscarNavbar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    text-decoration: none;
-  }
-  
   #navbarColor{
     background: rgba(0, 0, 0, 0.64);
     display: flex;
     justify-content: center;
   }
   #contenedorNavBoton{
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .botonesUsuario{
-    width: 10rem;
+    width: 9.2rem;
     height: 2.8rem;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .nav-adm{
