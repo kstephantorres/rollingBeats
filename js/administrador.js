@@ -134,16 +134,6 @@ formAgregarCancion.addEventListener('submit',(event)=>{
         const duracion = inputs[4].value
         const album = inputs[5].value
         const cancion = inputs[6].value
-        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(titulo, 1, 50)", validarCantidadCaracteres(titulo, 1, 50))
-        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(artista, 1, 50)", validarCantidadCaracteres(artista, 1, 50))
-        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(categoria, 1, 50)", validarCantidadCaracteres(categoria, 1, 50))
-        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(imagen, 8, 300)", validarCantidadCaracteres(imagen, 8, 300))
-        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarEnlace(imagen)", validarEnlace(imagen))
-        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(duracion, 4, 5)", validarCantidadCaracteres(duracion, 4, 5))
-        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarFormatoMS(duracion)", validarFormatoMS(duracion))
-        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(album, 1, 40)", validarCantidadCaracteres(album, 1, 40))
-        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(cancion, 8, 300)", validarCantidadCaracteres(cancion, 8, 300))
-        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~validarEnlace(cancion)", validarEnlace(cancion))
         
         if(validarCantidadCaracteres(titulo, 1, 50)
             && validarCantidadCaracteres(artista, 1, 50)
@@ -167,15 +157,30 @@ formAgregarCancion.addEventListener('submit',(event)=>{
             alert('Ingreso datos invalidos')
         }
     }else if(btnAgregar.innerText === 'Modificar'){
-            canciones[posicionActual].titulo = inputs[0].value
-            canciones[posicionActual].artista = inputs[1].value
-            canciones[posicionActual].categoria = inputs[2].value
-            canciones[posicionActual].imagen = inputs[3].value
-            canciones[posicionActual].duracion = inputs[4].value
-            canciones[posicionActual].album = inputs[5].value
-            canciones[posicionActual].cancion = inputs[6].value
-            guardarLocalStorage()
-            actualizarLi(posicionActual,inputs[3].value,inputs[0].value,inputs[1].value,inputs[5].value)
+            if(validarCantidadCaracteres(inputs[0].value, 1, 50)
+                && validarCantidadCaracteres(inputs[1].value, 1, 50)
+                && validarCantidadCaracteres(inputs[2].value, 3, 20) 
+                && validarCantidadCaracteres(inputs[3].value, 8, 300)
+                && validarEnlace(inputs[3].value)
+                && validarCantidadCaracteres(inputs[4].value, 4, 5) 
+                && validarFormatoMS(inputs[4].value)
+                && validarCantidadCaracteres(inputs[5].value, 1, 40)
+                && validarCantidadCaracteres(inputs[6].value, 8, 300)
+                && validarEnlace(inputs[6].value)
+            ){
+                canciones[posicionActual].titulo = inputs[0].value
+                canciones[posicionActual].artista = inputs[1].value
+                canciones[posicionActual].categoria = inputs[2].value
+                canciones[posicionActual].imagen = inputs[3].value
+                canciones[posicionActual].duracion = inputs[4].value
+                canciones[posicionActual].album = inputs[5].value
+                canciones[posicionActual].cancion = inputs[6].value
+                guardarLocalStorage()
+                actualizarLi(posicionActual,inputs[3].value,inputs[0].value,inputs[1].value,inputs[5].value)
+            }else{
+                alert('Ingreso datos invalidos')
+            }
+            
         btnAgregar.innerText = 'Agregar'
         
     }
