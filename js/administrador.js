@@ -1,4 +1,5 @@
 import { Cancion } from "./classCancion.js"
+import { validarCantidadCaracteres, validarEnlace, validarFormatoMS } from "./validaciones.js"
 
 const canciones= JSON.parse(localStorage.getItem('cancionesKey')) || []
 const listaCanciones= document.querySelector('#listaCanciones')
@@ -106,16 +107,6 @@ const borrarFila=(posicionCancion)=>{
     listaCanciones.removeChild(listaCanciones.children[posicionCancion+1])    
 }
 
-// window.detalleCancion=(idCancion)=>{
-//     const url = window.location
-//     //Luego del signo de pregunta (?) en el url son parametros
-//     url.href = `${url.origin}/pages/detalleMaquetado.html?id=${idCancion}`
-// }
-
-// window.editarContacto=(idCancion)=>{
-//     const url = window.location
-//     url.href = `${url.origin}/pages/modificarCancion.html?id=${idCancion}`
-// }
 
 cargaInicial()
 
@@ -132,9 +123,10 @@ formAgregarCancion.addEventListener('submit',(event)=>{
     event.preventDefault()
     
     const inputs = document.querySelectorAll('.inputAgregar')
+    
     if(btnAgregar.innerText === 'Agregar'){
         
-    document.querySelector('.modal-title').innerHTML= 'Agregar Canción'
+        document.querySelector('.modal-title').innerHTML= 'Agregar Canción'
         const titulo = inputs[0].value
         const artista = inputs[1].value
         const categoria = inputs[2].value
@@ -142,15 +134,39 @@ formAgregarCancion.addEventListener('submit',(event)=>{
         const duracion = inputs[4].value
         const album = inputs[5].value
         const cancion = inputs[6].value
-    const nuevaCancion = new Cancion(titulo,artista,categoria,imagen,duracion,album,cancion)
-        canciones.push(nuevaCancion)
+        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(titulo, 1, 50)", validarCantidadCaracteres(titulo, 1, 50))
+        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(artista, 1, 50)", validarCantidadCaracteres(artista, 1, 50))
+        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(categoria, 1, 50)", validarCantidadCaracteres(categoria, 1, 50))
+        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(imagen, 8, 300)", validarCantidadCaracteres(imagen, 8, 300))
+        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarEnlace(imagen)", validarEnlace(imagen))
+        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(duracion, 4, 5)", validarCantidadCaracteres(duracion, 4, 5))
+        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarFormatoMS(duracion)", validarFormatoMS(duracion))
+        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(album, 1, 40)", validarCantidadCaracteres(album, 1, 40))
+        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~ validarCantidadCaracteres(cancion, 8, 300)", validarCantidadCaracteres(cancion, 8, 300))
+        console.log("🚀 ~ file: administrador.js:137 ~ formAgregarCancion.addEventListener ~validarEnlace(cancion)", validarEnlace(cancion))
         
-        guardarLocalStorage()
-        limpiarFormulario()
-        crearLi(nuevaCancion)
-    }
-   else if(btnAgregar.innerText === 'Modificar')
-   {
+        if(validarCantidadCaracteres(titulo, 1, 50)
+            && validarCantidadCaracteres(artista, 1, 50)
+            && validarCantidadCaracteres(categoria, 3, 20) 
+            && validarCantidadCaracteres(imagen, 8, 300)
+            && validarEnlace(imagen)
+            && validarCantidadCaracteres(duracion, 4, 5) 
+            && validarFormatoMS(duracion)
+            && validarCantidadCaracteres(album, 1, 40)
+            && validarCantidadCaracteres(cancion, 8, 300)
+            && validarEnlace(cancion)
+            ){
+            
+            const nuevaCancion = new Cancion(titulo,artista,categoria,imagen,duracion,album,cancion)
+            canciones.push(nuevaCancion)
+            
+            guardarLocalStorage()
+            limpiarFormulario()
+            crearLi(nuevaCancion)
+        }else{
+            alert('Ingreso datos invalidos')
+        }
+    }else if(btnAgregar.innerText === 'Modificar'){
             canciones[posicionActual].titulo = inputs[0].value
             canciones[posicionActual].artista = inputs[1].value
             canciones[posicionActual].categoria = inputs[2].value
@@ -162,7 +178,7 @@ formAgregarCancion.addEventListener('submit',(event)=>{
             actualizarLi(posicionActual,inputs[3].value,inputs[0].value,inputs[1].value,inputs[5].value)
         btnAgregar.innerText = 'Agregar'
         
-   }
-   
+    }
+       
     btnCloseModal.click()
 })

@@ -1,5 +1,3 @@
-import { Cancion } from "./classCancion.js"
-
 export const canciones= JSON.parse(localStorage.getItem('cancionesKey')) || []
 const listaCanciones= document.querySelector('#listaCanciones')
 
