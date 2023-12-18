@@ -1,0 +1,27 @@
+
+.iconos{
+    padding: 0%;
+}
+.btn-agregar{
+    color: rgb(48, 132, 188);
+    font-size: 2rem;
+}
+.texto-boton{
+    padding: 0%;
+    margin: 0%;
+}
+.btn-editar:hover,.btn-agregar:hover, .btn-borrar:hover{
+    text-decoration: underline;
+}
+
+
+@media (max-width: 600px){
+    .texto-boton{
+        display: none;
+    }
+    .boton-grilla{
+        padding: 0%;
+        margin: 0%;
+    }
+    
+}
