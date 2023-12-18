@@ -1,3 +1,10 @@
+.reproductor{
+    position: sticky;
+    bottom: 10px;
+    
+}
+
+
 #sliderProgreso, #sliderVolumen{
     width: 75px;
 }
